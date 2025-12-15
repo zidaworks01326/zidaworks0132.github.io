@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuis Cinta</title>
+<style>
+body{font-family:sans-serif;background:#ffe6f2;text-align:center;padding:40px;}
+.card{background:white;padding:20px;border-radius:20px;max-width:400px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,.2);}
+button{padding:10px 20px;border:none;border-radius:10px;font-size:18px;margin:10px;cursor:pointer;}
+.yes{background:#ff4d88;color:white;}
+.no{background:#ddd;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Kuis Cinta ❤️</h2>
+<p id="q">Apakah kamu suka aku?</p>
+<button class="yes" onclick="jawab(true)">Iya</button>
+<button class="no" onclick="jawab(false)">Ngak</button>
+<p id="result"></p>
+</div>
+<script>
+let step=0;
+let questions=[
+"Apakah kamu senyum waktu lihat aku?",
+"Kalau aku ajak jalan, kamu mau?",
+"Mau gak jadi orang spesial buat aku?",
+"Apakah kamu mau sama aku selamanya?"
+];
+function jawab(y){
+if(!y){document.getElementById('result').innerText="Ehhh masa nggak 😢";return;}
+step++;
+if(step<questions.length){
+document.getElementById('q').innerText=questions[step];
+} else {
+document.getElementById('q').innerText="😍 Makasiii, kamu bikin aku bahagia!";
+document.querySelectorAll('button').forEach(b=>b.style.display='none');
+}
+}
+</script>
+</body>
+</html>
